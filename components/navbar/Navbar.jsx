@@ -12,36 +12,39 @@ const Links = [
   {
     id:2,
     title: "About",
-    url: "/"
+    url: "/about"
   },
   {
     id:3,
     title: "Portfolio",
-    url: "/"
+    url: "/portfolio"
   },
   {
     id:4,
     title: "Blog",
-    url: "/"
+    url: "/blog"
   },
   {
     id:5,
     title: "Contact",
-    url: "/"
+    url: "/contact"
   },
   {
     id:6,
     title: "Dashboard",
-    url: "/"
+    url: "/dashboard"
   },
 ]
 
-function Navbar() {
+function Navbar()  {
   return (
     <>
-      <Link href="/">
-        <Image src={logo} alt="Company logo" width={80} />
-      </Link>
+      <Link href="/"><Image src={logo} alt="Company logo" width={80} /></Link>
+      <div>
+        {Links.map(link=>(
+          <Link key={link.id} href={link.url}>{link.title}</Link>
+        ))}
+      </div>
     </>
   )
 }
