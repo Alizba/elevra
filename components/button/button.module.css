@@ -1,0 +1,173 @@
+.button {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button button {
+  background: linear-gradient(135deg, #194c33 0%, #2d7a54 100%);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(25, 76, 51, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2d7a54 0%, #45a76f 100%);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.button:hover button {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(25, 76, 51, 0.35);
+}
+
+.button:hover button::before {
+  left: 0;
+}
+
+.button button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(25, 76, 51, 0.3);
+}
+
+/* Alternative Button Styles - Add these classes to the Link component for variations */
+
+/* Outline Style */
+.button.outline button {
+  background: transparent;
+  color: #194c33;
+  border: 2px solid #194c33;
+  box-shadow: none;
+}
+
+.button.outline button::before {
+  background: #194c33;
+}
+
+.button.outline:hover button {
+  color: white;
+  border-color: #2d7a54;
+}
+
+/* Ghost Style */
+.button.ghost button {
+  background: rgba(25, 76, 51, 0.1);
+  color: #194c33;
+  border: 1px solid rgba(25, 76, 51, 0.3);
+  box-shadow: none;
+}
+
+.button.ghost:hover button {
+  background: rgba(25, 76, 51, 0.15);
+  border-color: rgba(25, 76, 51, 0.5);
+}
+
+/* Large Size */
+.button.large button {
+  padding: 22px 50px;
+  font-size: 18px;
+}
+
+/* Small Size */
+.button.small button {
+  padding: 12px 28px;
+  font-size: 14px;
+}
+
+/* Full Width */
+.button.fullWidth {
+  width: 100%;
+}
+
+.button.fullWidth button {
+  width: 100%;
+}
+
+/* Rounded Style */
+.button.rounded button {
+  border-radius: 50px;
+}
+
+/* Icon Button - for buttons with icons */
+.button.icon button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Disabled State */
+.button.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button.disabled button {
+  cursor: not-allowed;
+}
+
+/* Secondary Color Scheme */
+.button.secondary button {
+  background: linear-gradient(135deg, #333 0%, #555 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button.secondary button::before {
+  background: linear-gradient(135deg, #555 0%, #777 100%);
+}
+
+.button.secondary:hover button {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Danger Style */
+.button.danger button {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+}
+
+.button.danger button::before {
+  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+}
+
+.button.danger:hover button {
+  box-shadow: 0 6px 25px rgba(220, 38, 38, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .button button {
+    padding: 16px 32px;
+    font-size: 15px;
+  }
+
+  .button.large button {
+    padding: 18px 40px;
+    font-size: 16px;
+  }
+
+  .button.small button {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+}
