@@ -1,26 +1,22 @@
-
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  color: #bbb;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  color: white;
   max-width: 100vw;
-  background-color: black;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-.container{
+.container {
   max-width: 100vw;
   min-height: 100vh;
   margin: 0 auto;
@@ -28,4 +24,46 @@ a{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --card-bg: #f9f9f9;
+  --border-color: #e0e0e0;
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #e0e0e0;
+  --card-bg: #2c2c2c;
+  --border-color: #404040;
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  color: inherit;
+  background-color: transparent;
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+  color: #ffffff;
+}
+
+.dark a {
+  color: #34db66;
+}
+
+.dark button {
+  background-color: #3d7f4d;
+  color: white;
+  border-color: #5de287;
 }

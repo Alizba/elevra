@@ -1,0 +1,48 @@
+.container {
+  width: 60px;
+  height: 30px;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  padding: 2px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.container.dark {
+  background-color: #2f7a38;
+  border-color: #2f7a38;
+}
+
+.toggle {
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container.dark .toggle {
+  transform: translateX(30px);
+  background-color: #345e3d;
+}
+
+.icon {
+  font-size: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.container:hover {
+  border-color: #34db77;
+}
+
+.container.dark:hover {
+  border-color: #5de266;
+}
