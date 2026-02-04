@@ -1,18 +1,15 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import styles from './Darkmode.module.css'
+import styles from './darkmode.module.css'
 
 const Darkmode = () => {
-  // State to track if dark mode is active
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [mounted, setMounted] = useState(false)
 
-  // Ensure component is mounted (prevents hydration mismatch)
   useEffect(() => {
     setMounted(true)
     
-    // Load saved theme preference
     const savedTheme = localStorage.getItem('theme')
     if (savedTheme === 'dark') {
       setIsDarkMode(true)
@@ -20,11 +17,9 @@ const Darkmode = () => {
     }
   }, [])
 
-  // Toggle dark mode
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode)
     
-    // Add or remove dark class from html element
     if (!isDarkMode) {
       document.documentElement.classList.add('dark')
       localStorage.setItem('theme', 'dark')
@@ -34,7 +29,6 @@ const Darkmode = () => {
     }
   }
 
-  // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
     return (
       <div className={styles.container}>

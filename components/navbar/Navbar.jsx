@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from '@/public/logo.png'
 import styles from './navbar.module.css'
-import Darkmode from '../Darkmode/Darkmode'
+import Darkmode from '../../components/darkmode/darkmode.jsx'
 
 const Links = [
   {
