@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import Navbar from "@/components/navbar/navbar";
-// import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/navbar/navbar";
+import Footer from "@/components/footer/Footer";  // This is correct - capital F
 import { ThemeProvider } from "@/context/ThemeContext";
 
 const geistSans = Geist({
@@ -24,11 +24,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>
-        <div className="container">
-        {/* <Navbar/> */}
-        {children}
-        {/* <Footer/> */}
-        </div>
+          <div className="container">
+            <Navbar/>
+            {children}
+            <Footer/>
+          </div>
         </ThemeProvider>
       </body>
     </html>
